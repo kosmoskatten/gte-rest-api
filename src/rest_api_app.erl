@@ -27,7 +27,7 @@ stop(_State) ->
 
 start_rest() ->
     Dispatch = cowboy_router:compile([
-        {'_', [{"/msue", msue_handler, []}]}
+        {'_', [{"/api/pco/msue", msue_pco_handler, []}]}
     ]),
     cowboy:start_http(gte_api_listener, 100,
                       [{port, 8080}],
@@ -35,7 +35,8 @@ start_rest() ->
     ).
 
 deps() ->
-    ["/home/uabpasa/repos/gte-rest-api/deps/cowboy/ebin",
-     "/home/uabpasa/repos/gte-rest-api/deps/cowlib/ebin",
-     "/home/uabpasa/repos/gte-rest-api/deps/ranch/ebin"
+    ["/home/patrik/repos/gte-rest-api/deps/cowboy/ebin",
+     "/home/patrik/repos/gte-rest-api/deps/cowlib/ebin",
+     "/home/patrik/repos/gte-rest-api/deps/ranch/ebin",
+     "/home/patrik/repos/gte-rest-api/deps/jsx/ebin"
     ].
