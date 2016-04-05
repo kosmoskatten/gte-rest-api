@@ -1,0 +1,13 @@
+{application, rest_api,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  cowboy
+                 ]},
+  {mod, { rest_api_app, []}},
+  {env, []}
+ ]}.
